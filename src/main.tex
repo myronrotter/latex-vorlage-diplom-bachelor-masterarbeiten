@@ -1,0 +1,294 @@
+% Document format
+\documentclass[a4paper,12pt,headsepline]{scrartcl}
+
+% UTF8
+\usepackage[utf8]{inputenc}
+
+% Variables
+\input{settings/variables}
+
+% Import graphics of PNG files
+\usepackage{graphicx}
+
+% Default english special characters and hyphenation
+\usepackage[ngerman, english]{babel}
+
+% Euro character
+\usepackage[right]{eurosym}
+
+% Character encoding
+\usepackage[T1]{fontenc}
+
+\usepackage{lmodern}
+
+% Multi-page tables
+\usepackage{longtable}
+
+% Margin and twosided layout
+\usepackage[
+    twoside,
+    top=3cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm,
+    bindingoffset=1.5cm
+]{geometry}
+
+% Box within text
+\usepackage{fancybox}
+
+% Format URLs
+\usepackage[hyphens,obeyspaces,spaces]{url}
+
+% Color for text
+\usepackage{color}
+
+% Import mathematical symbols
+\usepackage{amssymb}
+
+% Content table points to sections
+\usepackage[bookmarksnumbered,pdftitle={\thesisTitle},hyperfootnotes=false]{hyperref}
+%\hypersetup{colorlinks, citecolor=red, linkcolor=blue, urlcolor=black}
+%\hypersetup{colorlinks, citecolor=black, linkcolor= black, urlcolor=black}
+
+% Header
+\usepackage{fancyhdr}
+\pagestyle{fancy} % Custom style
+\fancyhf{} % Clear header and footer
+\fancyhead[L]{\nouppercase{\leftmark}} % Header left
+\fancyhead[C]{} % Header center
+\fancyhead[R]{\thepage} % Header right
+\renewcommand{\headrulewidth}{0.4pt} % Header horizontal line
+%\fancyfoot[C]{\thepage} % Footer center
+%\renewcommand{\footrulewidth}{0.4pt} % Footer horizontla line
+
+% Tables
+\usepackage{array}
+
+% Citation and style
+\usepackage[
+    backend = biber,
+    style = numeric-comp,
+    bibencoding = utf8,
+    maxbibnames = 99,
+    hyperref=true,
+	date=year,
+	sortcites=true,
+	giveninits=true,
+	isbn=false,
+	url=false,
+	doi=false,
+	arxiv=false
+]{biblatex}
+
+\usepackage{csquotes}
+
+% Add references here
+\addbibresource{example.bib}
+
+% Disable spacing after punctuation (default LaTeX)
+%\frenchspacing
+
+% Line spacing
+\usepackage{setspace}
+
+% Image identifier
+\usepackage{capt-of}
+
+% Keyword index
+\usepackage{makeidx}
+\makeindex
+% \index{}, \see{}, \seealso{}
+
+% Listings (Code snippets)
+\usepackage{listings}
+\lstset{numbers=left, numberstyle=\tiny, numbersep=5pt, keywordstyle=\color{black}\bfseries, stringstyle=\ttfamily,showstringspaces=false,basicstyle=\footnotesize,captionpos=b}
+% Default language
+\lstset{language=java}
+
+% Nomenclature and abbreviations
+\usepackage[english]{nomencl}
+\let\abbrev\nomenclature
+
+% Title of abbreviations section
+\renewcommand{\nomname}{Abbreviations}
+% Spacing between abbreviation and description
+\setlength{\nomlabelwidth}{.25\textwidth}
+% Spacing between abbreviation and description regarding dots
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+% Spacing abbreviation to abbreviation
+\setlength{\nomitemsep}{-\parsep}
+% Generate abbreviations
+\makenomenclature
+%\makeglossary
+
+% Font style: Helvetica
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Bucketlist
+%\usepackage{todonotes}
+
+% Macros for math and complexity
+\usepackage{settings/math-macros}
+
+
+\begin{document}
+% Include hyphenations
+\input{settings/hyphenation}
+
+% Cover sheet
+\input{structure/coversheet}
+\newpage
+
+
+% 1.5 spacing
+\onehalfspacing
+
+% Empty page
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+% Statutory declaration
+\input{structure/declarationStatutory}
+\newpage
+
+% Declaration of confidentiality
+\input{structure/declarationConfidentiality}
+\newpage
+
+% Abstract
+\input{structure/abstract}
+\newpage
+
+% Summary
+\input{structure/summary}
+\newpage
+
+% Whom
+\input{structure/whom}
+\newpage
+
+% Acknowledgement
+\input{structure/acknowledgement}
+\newpage
+
+
+% Single spacing
+\singlespacing
+
+\cleardoublepage
+% Roman numbering
+\pagenumbering{roman}
+% Set page count at content table for roman numbering
+\setcounter{page}{1}
+
+% Display\cleardoublepage content table
+\thispagestyle{empty}
+\renewcommand{\contentsname}{Table of contents}
+\tableofcontents
+\newpage
+
+% List of figures
+\phantomsection
+% Add lof to toc
+\addcontentsline{toc}{section}{List of figures}
+% Custom headline for lof
+\renewcommand\listfigurename{List of figures}
+\fancyhead[L]{List of figures}
+% List of figures with numbering
+\listoffigures
+\newpage
+
+% List of tables
+\phantomsection
+% Add lot to toc
+\addcontentsline{toc}{section}{List of tables}
+% Custom headline for lot
+\renewcommand\listtablename{List of tables}
+\fancyhead[L]{List of tables}
+% List of tables with numbering
+\listoftables
+\newpage
+
+% Listing
+\phantomsection
+% Add listing to toc
+\addcontentsline{toc}{section}{Listings}
+%\renewcommand{\lstlistlistingname}{Listings}
+\fancyhead[L]{Listings}
+\lstlistoflistings
+\newpage
+
+% Abbreviations
+\phantomsection
+% Add abbreviations to toc
+\addcontentsline{toc}{section}{Abbreviations}
+\fancyhead[L]{Abbreviations}
+% Display abbreviations
+\input{settings/abbreviations}
+\printnomenclature[4cm]
+\newpage
+
+
+% 1.5 spacing
+\onehalfspacing
+
+\cleardoublepage
+% Arabic numbering
+\pagenumbering{arabic}
+% Set page count at content table for arabic numbering
+\setcounter{page}{1}
+
+% Add sections here
+\input{sections/01_Introduction}
+\newpage
+
+\input{sections/02_Section}
+\newpage
+
+\input{sections/03_Section}
+\newpage
+
+\input{sections/04_Example}
+\newpage
+
+\input{sections/05_Outook}
+\newpage
+
+\input{sections/06_Conclusion}
+\newpage
+
+
+% single spacing
+\singlespacing
+\phantomsection
+% Add references to toc
+\addcontentsline{toc}{section}{References}
+% Display references
+\printbibliography%[heading = bibintoc]
+\newpage
+
+%% Index
+%% Add index to toc
+%\addcontentsline{toc}{section}{Index}
+%%\renewcommand{\indexname}{Index}
+%% Display index
+%\printindex
+%\newpage
+
+% 1.5 spacing
+\onehalfspacing
+% Appendix
+\phantomsection
+\addcontentsline{toc}{section}{Appendix}
+\fancyhead[L]{Appendix}
+\input{appendix/appendix}
+\newpage
+
+% Empty ending page
+\thispagestyle{empty}
+\mbox{}
+
+\end{document}
