@@ -1,13 +1,12 @@
 # thesis-template
 
 This LaTeX-template can be used for technical reports, BSc or MSc thesis.
-Refer to [./src/thesis-template.pdf](./src/thesis-template.pdf).
+Refer to [./thesis-template.pdf](./thesis-template.pdf).
 
-# Docker
+# Quick start
 
-The environment to create pdf files can be run in a Docker container. For this task, the provided [Dockerfile](./Dockerfile) can be used.
-
-The Docker image can be created with the command `docker build -t maknesium/latexvorlage:latest`. Then, the container can be created with the command `docker run -d --name latexvorlage-container -v /pfad/zum/ordner/src:/app/src maknesium/latexvorlage:latest`. The container is not deleted after it is finished compiling the tex files and can simply be started again to compile the tex files again with the command `docker start latexvorlage-container`.
+Fork the repo, open and adjust it using [Overleaf](https://www.overleaf.com/) via _New Project_ and _Import from Github_.
+Otherwise, check out [Docker-based latex compilation](https://github.com/blang/latex-docker) for compiling latex sources using docker in a cli native way.
 
 # License
 
