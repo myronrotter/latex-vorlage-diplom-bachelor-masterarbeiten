@@ -7,7 +7,7 @@
 % Variables
 \input{settings/variables}
 
-% Import graphics of PNG files
+% Import graphics of PNG files 
 \usepackage{graphicx}
 
 % Default english special characters and hyphenation
@@ -24,7 +24,7 @@
 % Multi-page tables
 \usepackage{longtable}
 
-% Margin and twosided layout
+% Margin and twosided layout 
 \usepackage[
     twoside,
     top=3cm,
@@ -42,9 +42,6 @@
 
 % Color for text
 \usepackage{color}
-
-% Import mathematical symbols
-\usepackage{amssymb}
 
 % Content table points to sections
 \usepackage[bookmarksnumbered,pdftitle={\thesisTitle},hyperfootnotes=false]{hyperref}
@@ -130,7 +127,7 @@
 %\usepackage{todonotes}
 
 % Macros for math and complexity
-\usepackage{settings/math-macros}
+\usepackage{settings/math}
 
 
 \begin{document}
@@ -138,7 +135,7 @@
 \input{settings/hyphenation}
 
 % Cover sheet
-\input{structure/coversheet}
+\input{preamble/coversheet}
 \newpage
 
 
@@ -151,27 +148,27 @@
 \newpage
 
 % Statutory declaration
-\input{structure/declarationStatutory}
+\input{preamble/declarationStatutory}
 \newpage
 
 % Declaration of confidentiality
-\input{structure/declarationConfidentiality}
+\input{preamble/declarationConfidentiality}
 \newpage
 
 % Abstract
-\input{structure/abstract}
+\input{preamble/abstract}
 \newpage
 
 % Summary
-\input{structure/summary}
+\input{preamble/summary}
 \newpage
 
 % Whom
-\input{structure/whom}
+\input{preamble/whom}
 \newpage
 
 % Acknowledgement
-\input{structure/acknowledgement}
+\input{preamble/acknowledgement}
 \newpage
 
 

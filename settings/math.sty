@@ -1,0 +1,94 @@
+%%%%%%%%%%%%
+% PACKAGES %
+%%%%%%%%%%%%
+
+% Spaces.
+\usepackage{xspace}
+
+% Parser.
+\usepackage{xparse}
+
+% Math.
+\usepackage[helvet]{sfmath}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\numberwithin{equation}{section}
+
+% Symbols.
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{textcomp}
+
+% Graphics.
+\usepackage{tikz}
+\usetikzlibrary{shapes, patterns, positioning}
+\usepackage{subcaption}
+
+
+%%%%%%%%%%
+% MACROS %
+%%%%%%%%%%
+
+% Structure.
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{simulation}[theorem]{Simulation}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+% Basics.
+\newcommand{\on}[1]{\operatorname{#1}}
+\newcommand{\defas}[0]{\mathrel{\mathop:}=} % define as
+\newcommand{\asdef}[0]{=\mathrel{\mathop:}} % as defined
+\newcommand{\ddd}[0]{, \ldots, } % , ..., 
+
+% Logic.
+\newcommand{\fa}[0]{~\forall}
+\newcommand{\st}[0]{\mathrel{:}} % such that
+\newcommand{\is}[0]{\mathrel{:}}
+\newcommand{\from}[0]{\mathop{~:~}}
+
+% Sets.
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\nin}[0]{\not\in}
+\newcommand{\with}[0]{\mathrel{|}}
+\newcommand{\powerof}[1]{\mathcal{P}\left(#1\right)} % P(Set)
+\newcommand{\power}[1]{2^#1} % 2^Set
+\newcommand{\len}[1]{\ensuremath{|#1|}}
+\newcommand{\eset}[0]{\emptyset}
+
+% Numbers.
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\Q}[0]{\mathbb{Q}}
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\onerange}[1]{\{1 \ddd #1\}}
+\newcommand{\zerorange}[1]{\{0 \ddd #1\}}
+
+% Functions.
+\newcommand{\sign}[0]{\on{sign}}
+\newcommand{\norm}[1]{\lVert #1 \rVert}
+\newcommand{\cif}[0]{\text{, if }}
+\newcommand{\els}[0]{\text{, otherwise}}
+
+% Probability.
+\newcommand{\prob}[1]{\mathrm{P}(#1)}
+\newcommand{\expected}[1]{\mathrm{E}[#1]}
+\newcommand{\given}[0]{\mathrel{|}}
+
+% Complexity.
+\renewcommand{\O}[0]{\ensuremath{\mathcal{O}}} % Big-O-Notation
+\newcommand{\p}[0]{\ensuremath{\text{P}}}
+\newcommand{\np}[0]{\ensuremath{\text{NP}}}
+\newcommand{\rp}[0]{\ensuremath{\text{RP}}} % Randomized polynomial time
+\newcommand{\bpp}[0]{\ensuremath{\text{BPP}}} % Bounded-error prob. polynomial time
+\newcommand{\zpp}[0]{\ensuremath{\text{ZPP}}} % Zero-error prob. polynomial time
+\newcommand{\nphard}[0]{\ensuremath{\np\text{-hard}}} % NP-hard
+\newcommand{\npcomplete}[0]{\ensuremath{\np\text{-complete}}} % NP-complete
